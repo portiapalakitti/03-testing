@@ -640,6 +640,15 @@ html {
             document.querySelectorAll('.tab-btn').forEach((btn, i) => btn.classList.toggle('active', i === index));
             document.querySelectorAll('.story-detail-card').forEach((card, i) => card.classList.toggle('active', i === index));
         }
+        window.addEventListener("load", function () {
+    const hash = window.location.hash;
+
+    if (hash) {
+        const storyIndex = hash.replace("#story-", "");
+        switchTab(Number(storyIndex));
+    }
+});
+
     </script>
 
     <script src="Javascript/script.js"></script>
